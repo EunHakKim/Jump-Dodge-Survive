@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\529ac\\graphics\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Follow.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Follow.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Player.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Player.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\529ac\\graphics\\Assets\\SimpleLowPolyNature\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\SimpleLowPolyNature\\Readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Follow.cs",
+              "DocumentMoniker": "C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Follow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Follow.cs",
+              "ToolTip": "C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Follow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Follow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T18:38:24.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\529ac\\graphics\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T18:06:08.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Readme.txt",
+              "DocumentMoniker": "C:\\Users\\529ac\\graphics\\Assets\\SimpleLowPolyNature\\Readme.txt",
+              "RelativeDocumentMoniker": "Assets\\SimpleLowPolyNature\\Readme.txt",
+              "ToolTip": "C:\\Users\\529ac\\graphics\\Assets\\SimpleLowPolyNature\\Readme.txt",
+              "RelativeToolTip": "Assets\\SimpleLowPolyNature\\Readme.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-16T17:33:21.741Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
