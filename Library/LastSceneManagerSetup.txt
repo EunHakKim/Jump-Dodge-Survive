@@ -1,9 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity
   isLoaded: 1
   isActive: 1
-  isSubScene: 0
-- path: Assets/SimpleLowPolyNature/Scenes/DemoDay.unity
-  isLoaded: 1
-  isActive: 0
   isSubScene: 0
