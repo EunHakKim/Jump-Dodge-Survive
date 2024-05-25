@@ -5,6 +5,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float rate;
+    public int maxAmmo;
+    public int curAmmo;
+
     public Transform bulletPos;
     public GameObject bullet;
     public Transform bulletCasePos;
@@ -12,7 +15,11 @@ public class Weapon : MonoBehaviour
 
     public void Use()
     {
-        StartCoroutine("Shot");
+        if(curAmmo > 0)
+        {
+            curAmmo--;
+            StartCoroutine("Shot");
+        }
     }
 
     IEnumerator Shot()

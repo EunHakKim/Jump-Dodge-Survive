@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Item
+  - Bullet
+  - Enemy
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -12,15 +16,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
+  - Player
+  - PlayerBullet
+  - BulletCase
+  - Wall
+  - Enemy
+  - EnemyDead
+  - EnemyBullet
+  - PlayerDead
   - 
   - 
   - 
