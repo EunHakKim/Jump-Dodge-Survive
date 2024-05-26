@@ -361,11 +361,10 @@
 "Assets/Scripts/Bullet.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/Follow.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Item.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Weapon.cs"
-"Assets/Whale3D/Script/BaseMesh.cs"
-"Assets/Whale3D/Script/PlayANim.cs"
 -langversion:9.0
 /deterministic
 /optimize+

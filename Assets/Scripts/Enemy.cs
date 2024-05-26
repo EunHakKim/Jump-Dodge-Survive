@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth;
     public int curHealth;
+    public int score;
     public Transform target;
     public BoxCollider meleeArea;
     public bool isChase;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     NavMeshAgent nav;
     Animator anim;
     int attackMethod;
+    bool isVictory;
 
     void Awake()
     {
@@ -27,8 +29,9 @@ public class Enemy : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         attackMethod = 1;
+        isVictory = false;
 
-        Invoke("ChaseStart", 2);
+        Invoke("ChaseStart", 1);
     }
     void ChaseStart()
     {
@@ -42,6 +45,13 @@ public class Enemy : MonoBehaviour
         {
             nav.SetDestination(target.position);
             nav.isStopped = !isChase;
+        }
+        Player player = target.GetComponent<Player>();
+        if (player.health == 0 && !isVictory)
+        {
+            nav.enabled = false;
+            anim.SetTrigger("doVictory");
+            isVictory= true;
         }
             
     }
@@ -120,6 +130,8 @@ public class Enemy : MonoBehaviour
     IEnumerator OnDamage(Vector3 reactVec)
     {
         mat.color = Color.red;
+        Player player = target.GetComponent<Player>();
+        player.score += score;
         yield return new WaitForSeconds(0.1f);
 
         if(curHealth > 0)
@@ -133,6 +145,7 @@ public class Enemy : MonoBehaviour
             isChase= false;
             nav.enabled = false;
             anim.SetTrigger("doDie");
+            
 
             reactVec = reactVec.normalized;
             reactVec += Vector3.up;

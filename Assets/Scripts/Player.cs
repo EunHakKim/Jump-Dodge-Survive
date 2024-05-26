@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     public float speed;
     public Weapon weapon;
     public Camera followCamera;
+    public GameManager manager;
 
     public int coin;
     public int health;
+    public int score;
 
     public int maxCoin;
     public int maxHealth;
@@ -45,6 +47,8 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         meshs = GetComponentsInChildren<MeshRenderer>();
+
+        //PlayerPrefs.SetInt("MaxScore", 500);
     }
 
     // Update is called once per frame
@@ -197,7 +201,7 @@ public class Player : MonoBehaviour
         }
         else if(other.tag == "EnemyBullet")
         {
-            if (!isDamage)
+            if (!isDamage && (health>0))
             {
                 Bullet enemyBullet = other.GetComponent<Bullet>();
                 health -= enemyBullet.damage;
@@ -214,6 +218,9 @@ public class Player : MonoBehaviour
             mesh.material.color = Color.yellow;
         }
 
+        if (health <= 0 && !isDead)
+            OnDie();
+
         yield return new WaitForSeconds(1f);
 
         isDamage= false;
@@ -221,14 +228,17 @@ public class Player : MonoBehaviour
         {
             mesh.material.color = Color.white;
         }
-
-        if (health <= 0)
-            OnDie();
     }
 
     void OnDie()
     {
         anim.SetTrigger("doDie");
         isDead = true;
+        Invoke("GameOver", 5f);
+    }
+
+    void GameOver()
+    {
+        manager.GameOver();
     }
 }
