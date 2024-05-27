@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public bool isChase;
     public bool isAttack;
 
+    public AudioSource attackSound;
+
     Rigidbody rigid;
     BoxCollider boxCollider;
     Material mat;
@@ -82,7 +84,8 @@ public class Enemy : MonoBehaviour
     {
         isChase= false;
         isAttack= true;
-        if(attackMethod== 1)
+        attackSound.Play();
+        if (attackMethod== 1)
         {
             anim.SetBool("isAttack1", true);
             yield return new WaitForSeconds(0.2f);

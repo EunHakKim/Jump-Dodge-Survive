@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
     public Camera followCamera;
     public GameManager manager;
 
+    public AudioSource coinSound;
+    public AudioSource healthSound;
+    public AudioSource damageSound;
+    public AudioSource shotSound;
+    public AudioSource dodgeSound;
+    public AudioSource reloadSound;
+
     public int coin;
     public int health;
     public int score;
@@ -110,6 +117,7 @@ public class Player : MonoBehaviour
         isFireReady = weapon.rate < fireDelay;
 
         if(fDown && isFireReady && !isDodge && weapon.curAmmo!=0 && !isDead) {
+            shotSound.Play();
             weapon.Use();
             anim.SetTrigger("doShot");
             fireDelay = 0;
@@ -118,8 +126,9 @@ public class Player : MonoBehaviour
 
     void Reload()
     {
-        if(rDown && !isDodge && isFireReady && !isDead)
+        if(rDown && !isDodge && isFireReady && !isDead && !isReload && (weapon.curAmmo != weapon.maxAmmo))
         {
+            reloadSound.Play();
             anim.SetTrigger("doReload");
             isReload= true;
 
@@ -136,6 +145,7 @@ public class Player : MonoBehaviour
     void Dodge()
     {
         if(jDown && moveVec != Vector3.zero && !isDodge &&!isDead) {
+            dodgeSound.Play();
             dodgeVec = moveVec;
             speed *= 2;
             anim.SetTrigger("doDodge");
@@ -184,6 +194,7 @@ public class Player : MonoBehaviour
             {
                 case Item.Type.Coin:
                     coin += item.value;
+                    coinSound.Play();
                     if(coin > maxCoin)
                         coin= maxCoin;
                     Destroy(other.gameObject);
@@ -192,6 +203,7 @@ public class Player : MonoBehaviour
                     if(health != maxHealth)
                     {
                         health += item.value;
+                        healthSound.Play();
                         if (health > maxHealth)
                             health = maxHealth;
                         Destroy(other.gameObject);
@@ -212,6 +224,7 @@ public class Player : MonoBehaviour
 
     IEnumerator OnDamage()
     {
+        damageSound.Play();
         isDamage = true;
         foreach(MeshRenderer mesh in meshs)
         {
@@ -234,7 +247,7 @@ public class Player : MonoBehaviour
     {
         anim.SetTrigger("doDie");
         isDead = true;
-        Invoke("GameOver", 5f);
+        Invoke("GameOver", 3f);
     }
 
     void GameOver()

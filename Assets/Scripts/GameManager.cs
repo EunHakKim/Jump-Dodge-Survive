@@ -14,7 +14,10 @@ public class GameManager : MonoBehaviour
     public Enemy boss1;
     public Enemy boss2;
     public float playTime;
-    public bool isBattle;
+
+    public AudioSource loseSound;
+    public AudioSource winSound;
+    public AudioSource backgroundSound;
 
     public GameObject menuPanel;
     public GameObject gamePanel;
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
     bool isDie;
     bool istimeOut;
     bool isWin;
+    bool isBattle;
 
     void Awake()
     {
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
         isDie= false;
         istimeOut=false;
         isWin=false;
+        isBattle = false;
     }
 
     public void GameStart()
@@ -65,16 +70,24 @@ public class GameManager : MonoBehaviour
 
         boss1.gameObject.SetActive(true);
         boss2.gameObject.SetActive(true);
+        backgroundSound.Play();
+        isBattle = true;
     }
 
     public void GameOver()
     {
+        isBattle = false;
         gamePanel.SetActive(false);
         overPanel.SetActive(true);
 
+        player.gameObject.SetActive(false);
+
         gameItem.SetActive(false);
 
-        if(isWin)
+        boss1.gameObject.SetActive(false);
+        boss2.gameObject.SetActive(false);
+
+        if (isWin)
         {
             int endScore = player.score + player.coin + (int)Mathf.Round(limitTime);
             curScoreText.text = string.Format("{0:n0}", endScore);
@@ -99,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (limitTime > 0 && !isDie && !isWin && !istimeOut)
+        if (isBattle && limitTime > 0 && !isDie && !isWin && !istimeOut)
         {
             limitTime -= Time.deltaTime;
         }
@@ -131,24 +144,30 @@ public class GameManager : MonoBehaviour
             reloadTxt.gameObject.SetActive(false);
         }
 
-        if(player.health <= 0 && !isWin && !istimeOut)
+        if(player.health <= 0 && !isWin && !istimeOut && !isDie)
         {
-            isDie= true;
+            backgroundSound.Stop();
+            loseSound.Play();
+            isDie = true;
             playerDieTxt.gameObject.SetActive(true);
         }
 
-        if(boss1.curHealth <=0 && boss2.curHealth <= 0 && !istimeOut && !isDie)
+        if(boss1.curHealth <=0 && boss2.curHealth <= 0 && !istimeOut && !isDie && !isWin)
         {
+            backgroundSound.Stop();
+            winSound.Play();
             isWin= true;
             playerWinTxt.gameObject.SetActive(true);
             Invoke("GameOver", 5f);
         }
 
-        if (Mathf.Round(limitTime) == 0 && !isDie && !isWin)
+        if (Mathf.Round(limitTime) == 0 && !isDie && !isWin && !istimeOut)
         {
+            backgroundSound.Stop();
+            loseSound.Play();
             istimeOut = true;
             timeOutTxt.gameObject.SetActive(true);
-            Invoke("GameOver", 5f);
+            Invoke("GameOver", 3f);
         }
     }
 }
