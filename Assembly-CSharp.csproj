@@ -59,14 +59,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.29f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\QuarterView 3D Action BE5\ReadMe\Scripts\ReadmeBE5.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\Follow.cs" />
+    <Compile Include="Assets\Scripts\Enemy_defeat.cs" />
+    <Compile Include="Assets\Scripts\GameManager_defeat.cs" />
+    <Compile Include="Assets\Scripts\Player_defeat.cs" />
+    <Compile Include="Assets\Scripts\Item_defeat.cs" />
+    <Compile Include="Assets\Scripts\Weapon_defeat.cs" />
+    <Compile Include="Assets\Scripts\Follow_defeat.cs" />
+    <Compile Include="Assets\Scripts\Bullet_defeat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
